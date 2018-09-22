@@ -7,7 +7,7 @@ RUN apk --no-cache add nginx supervisor curl
 RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/repositories \
 && echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories \
 && echo "http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories \
-&& echo "nameserver 8.8.8.8" >> /etc/resolv.conf && apk update
+&& echo "nameserver 8.8.8.8" >> /etc/resolv.conf && apk update && apk upgrade
 
 # Install packages
 RUN apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
