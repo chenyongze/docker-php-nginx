@@ -105,5 +105,5 @@ RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 COPY src/ /var/www/html/
 
-EXPOSE 80 443
+EXPOSE 80 443 9000
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
