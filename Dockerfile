@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:latest
 LABEL Maintainer="yongze.chen <sapphire.php@gmail.com>" \
       Description="Lightweight container with Nginx 1.14 & PHP-FPM 7.2 based on Alpine Linux."
 
@@ -10,9 +10,7 @@ RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/reposi
 # Install packages
 RUN apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
     php7-zlib php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype \
-    php7-mongodb php7-redis php7-opcache php7-mbstring php7-gd
-
-RUN apk --no-cache add nginx supervisor curl
+    php7-mbstring php7-gd nginx supervisor curl
 
 RUN ln -fs /usr/bin/php7 /usr/bin/php \
 && rm -rf /var/cache/apk/ && mkdir /var/cache/apk && rm -rf /tmp/*
