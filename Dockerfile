@@ -95,7 +95,7 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 
 # Configure PHP-FPM
 COPY config/fpm-pool.conf /usr/local/etc/php-fpm.d/www.conf
-#COPY config/php.ini /etc/php7/conf.d/zzz_custom.ini
+COPY config/php.ini /usr/local/etc/php/php.ini
 
 # Configure supervisord
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
