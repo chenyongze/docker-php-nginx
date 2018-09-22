@@ -95,7 +95,7 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 
 # Configure PHP-FPM
 COPY config/fpm-pool.conf /usr/local/etc/php-fpm.d/www.conf
-COPY config/php.ini /usr/local/etc/php/php.ini
+# COPY config/php.ini /usr/local/etc/php/php.ini
 
 # Configure supervisord
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
@@ -106,4 +106,4 @@ WORKDIR /var/www/html
 COPY src/ /var/www/html/
 
 EXPOSE 80 443
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
