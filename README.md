@@ -4,7 +4,7 @@ Example PHP-FPM 7.2 & Nginx 1.14 setup for Docker, build on [Alpine Linux](http:
 The image is only +/- 35MB large.
 
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/trafex/alpine-nginx-php7.svg)](https://hub.docker.com/r/trafex/alpine-nginx-php7/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/trafex/alpine-nginx-php7.svg)](https://hub.docker.com/r/chenyongze/docker-php-nginx/)
 
 Usage
 -----
