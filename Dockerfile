@@ -1,6 +1,5 @@
 # Use Alpine Linux
-# FROM php:7.2.10-fpm-alpine
-FROM php:7.3.0RC1-fpm-alpine3.8
+FROM php:7.2.10-fpm-alpine
 
 LABEL Maintainer="yongze.chen <sapphire.php@gmail.com>" \
       Description="Lightweight container with Nginx 1.14 & PHP-FPM 7.2 based on Alpine Linux."
