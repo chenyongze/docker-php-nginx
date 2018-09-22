@@ -7,6 +7,11 @@ LABEL Maintainer="yongze.chen <sapphire.php@gmail.com>" \
 # Set Timezone Environments
 ENV TIMEZONE  Asia/Shanghai
 
+RUN echo -e "https://mirrors.ustc.edu.cn/alpine/latest-stable/main\nhttps://mirrors.ustc.edu.cn/alpine/latest-stable/community" > /etc/apk/repositories \
+    && apk update \
+    &&  apk upgrade
+# RUN echo "nameserver 114.114.114.114 \n search DHCP HOST" > /etc/resolv.conf &&  apk update && apk upgrade
+
 # install php start
 RUN apk add --update tzdata  \
     && cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime  \
@@ -56,7 +61,7 @@ RUN apk add --update tzdata  \
                                 --with-png-dir=/usr/include \
                                 --with-webp-dir=/usr/include \
                                 --with-freetype-dir=/usr/include  \
-    && pecl install swoole redis xdebug mongodb \
+    && pecl install swoole redis xdebug mongodb ampq \
     && pecl clear-cache  \
     && docker-php-ext-enable swoole redis xdebug mongodb \
     && docker-php-ext-install pdo \
