@@ -2,10 +2,10 @@ FROM alpine:latest
 LABEL Maintainer="yongze.chen <sapphire.php@gmail.com>" \
       Description="Lightweight container with Nginx 1.14 & PHP-FPM 7.2 based on Alpine Linux."
 
-RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/repositories \
-&& echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories \
-&& echo "http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories \
-&& echo "nameserver 8.8.8.8" >> /etc/resolv.conf && apk update && apk upgrade
+#RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/repositories \
+#&& echo "http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories \
+#&& echo "http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories \
+#&& echo "nameserver 8.8.8.8" >> /etc/resolv.conf && apk update && apk upgrade
 
 # Install packages
 RUN apk --no-cache add php7 php7-fpm php7-mysqli php7-json php7-openssl php7-curl \
