@@ -56,9 +56,9 @@ RUN apk add --update tzdata  \
                                 --with-png-dir=/usr/include \
                                 --with-webp-dir=/usr/include \
                                 --with-freetype-dir=/usr/include  \
-    && pecl install swoole redis xdebug mongodb amqp rdkafka xhprof-0.9.4 \
+    && pecl install swoole redis xdebug mongodb rdkafka xhprof-0.9.4 \
     && pecl clear-cache  \
-    && docker-php-ext-enable swoole redis xdebug mongodb amqp rdkafka xhprof \
+    && docker-php-ext-enable swoole redis xdebug mongodb rdkafka xhprof \
     && docker-php-ext-install pdo \
                            pdo_mysql \
                            mysqli \
